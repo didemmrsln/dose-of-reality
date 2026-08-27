@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: nhanes_raw
+    database: dose-of-reality-506713
+    schema: nhanes_raw
+    description: "NHANES 2021-2023 cycle ham veri tablolari"
+    tables:
+      - name: demo_l
+        description: "Demografik degiskenler (yas, cinsiyet, etnik koken)"
+      - name: dsqids_l
+        description: "30 gunluk supplement kullanimi - kisi bazli, urun detayli"
+      - name: dsqtot_l
+        description: "30 gunluk toplam supplement kullanimi - kisi basi ozet"
+      - name: dspi
+        description: "Supplement urun referans tablosu"
+      - name: dsii
+        description: "Supplement icerik (ingredient) referans tablosu"
+      - name: dsbi
+        description: "Supplement karisim (blend) alt bilesen tablosu"
+      - name: ul_reference
+        description: "NIH ODS / IOM Tolerable Upper Intake Level (UL) referans tablosu"
