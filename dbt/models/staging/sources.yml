@@ -20,3 +20,27 @@ sources:
         description: "Supplement karisim (blend) alt bilesen tablosu"
       - name: ul_reference
         description: "NIH ODS / IOM Tolerable Upper Intake Level (UL) referans tablosu"
+      - name: demo_2011_2012
+        description: "NHANES 2011-2012 cycle - demografik degiskenler"
+      - name: dsqids_2011_2012
+        description: "NHANES 2011-2012 cycle - 30 gunluk supplement kullanimi"
+      - name: dsqtot_2011_2012
+        description: "NHANES 2011-2012 cycle - 30 gunluk toplam ozet"
+      - name: demo_2013_2014
+        description: "NHANES 2013-2014 cycle - demografik degiskenler"
+      - name: dsqids_2013_2014
+        description: "NHANES 2013-2014 cycle - 30 gunluk supplement kullanimi"
+      - name: dsqtot_2013_2014
+        description: "NHANES 2013-2014 cycle - 30 gunluk toplam ozet"
+      - name: demo_2015_2016
+        description: "NHANES 2015-2016 cycle - demografik degiskenler"
+      - name: dsqids_2015_2016
+        description: "NHANES 2015-2016 cycle - 30 gunluk supplement kullanimi"
+      - name: dsqtot_2015_2016
+        description: "NHANES 2015-2016 cycle - 30 gunluk toplam ozet"
+      - name: demo_2017_2020
+        description: "NHANES 2017-2020 (pre-pandemic) cycle - demografik degiskenler"
+      - name: dsqids_2017_2020
+        description: "NHANES 2017-2020 (pre-pandemic) cycle - 30 gunluk supplement kullanimi"
+      - name: dsqtot_2017_2020
+        description: "NHANES 2017-2020 (pre-pandemic) cycle - 30 gunluk toplam ozet"
