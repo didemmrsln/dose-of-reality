@@ -44,3 +44,39 @@ sources:
         description: "NHANES 2017-2020 (pre-pandemic) cycle - 30 gunluk supplement kullanimi"
       - name: dsqtot_2017_2020
         description: "NHANES 2017-2020 (pre-pandemic) cycle - 30 gunluk toplam ozet"
+      - name: demo_1999_2000
+        description: "NHANES demo_1999_2000"
+      - name: dsqids_1999_2000
+        description: "NHANES dsqids_1999_2000"
+      - name: dsqtot_1999_2000
+        description: "NHANES dsqtot_1999_2000"
+      - name: demo_2001_2002
+        description: "NHANES demo_2001_2002"
+      - name: dsqids_2001_2002
+        description: "NHANES dsqids_2001_2002"
+      - name: dsqtot_2001_2002
+        description: "NHANES dsqtot_2001_2002"
+      - name: demo_2003_2004
+        description: "NHANES demo_2003_2004"
+      - name: dsqids_2003_2004
+        description: "NHANES dsqids_2003_2004"
+      - name: dsqtot_2003_2004
+        description: "NHANES dsqtot_2003_2004"
+      - name: demo_2005_2006
+        description: "NHANES demo_2005_2006"
+      - name: dsqids_2005_2006
+        description: "NHANES dsqids_2005_2006"
+      - name: dsqtot_2005_2006
+        description: "NHANES dsqtot_2005_2006"
+      - name: demo_2007_2008
+        description: "NHANES demo_2007_2008"
+      - name: dsqids_2007_2008
+        description: "NHANES dsqids_2007_2008"
+      - name: dsqtot_2007_2008
+        description: "NHANES dsqtot_2007_2008"
+      - name: demo_2009_2010
+        description: "NHANES demo_2009_2010"
+      - name: dsqids_2009_2010
+        description: "NHANES dsqids_2009_2010"
+      - name: dsqtot_2009_2010
+        description: "NHANES dsqtot_2009_2010"
