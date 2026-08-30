@@ -1,34 +1,51 @@
 {{ config(materialized='view') }}
 
--- 5 cycle'in supplement kullanim verilerini birlestirir.
--- DSPI ile join edilebilecek ORTAK bir anahtar (dspi_product_id) turetiliyor:
---   - 2011-2012, 2013-2014, 2015-2016 (eski DSDSUPID sistemi):
---     product_id (=DSDSUPID), DSPI.DSDSUPID uzerinden eslesir
---   - 2017-2020, 2021-2023 (yeni DSDPID sistemi):
---     product_id (=DSDPID), DSPI.DSDPID uzerinden eslesir
---
--- DSPI tablosunun HEM DSDSUPID HEM DSDPID sutunlarini birlikte
--- tasidigi (CDC resmi doc, bkz. NHANES_ID_Sistemi_Kisiti.md) kullanilarak,
--- dspi_product_id her zaman DSPI.DSDPID degerine esitleniyor -
--- boylece bu modelden sonraki tum join'ler (DSII, DSBI) TEK bir
--- sutun (DSDPID) uzerinden yapilabiliyor.
+-- TUM 10 cycle blogunun supplement kullanim verilerini birlestirir.
+-- Tum eski cycle'lar (1999-2010) 'legacy' id_system (DSDSUPID) kullanir.
 
 with unified as (
 
-    select seqn, product_id, product_name, days_used_30d, cycle,
-           'legacy' as id_system
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
+    from {{ ref('stg_dsqids_1999_2000') }}
+
+    union all
+
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
+    from {{ ref('stg_dsqids_2001_2002') }}
+
+    union all
+
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
+    from {{ ref('stg_dsqids_2003_2004') }}
+
+    union all
+
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
+    from {{ ref('stg_dsqids_2005_2006') }}
+
+    union all
+
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
+    from {{ ref('stg_dsqids_2007_2008') }}
+
+    union all
+
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
+    from {{ ref('stg_dsqids_2009_2010') }}
+
+    union all
+
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
     from {{ ref('stg_dsqids_2011_2012') }}
 
     union all
 
-    select seqn, product_id, product_name, days_used_30d, cycle,
-           'legacy' as id_system
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
     from {{ ref('stg_dsqids_2013_2014') }}
 
     union all
 
-    select seqn, product_id, product_name, days_used_30d, cycle,
-           'legacy' as id_system
+    select seqn, product_id, product_name, days_used_30d, cycle, 'legacy' as id_system
     from {{ ref('stg_dsqids_2015_2016') }}
 
     union all
@@ -55,8 +72,6 @@ with_dspi_key as (
         u.cycle,
         u.id_system,
 
-        -- id_system'e gore dogru DSPI sutunu ile eslestirilip
-        -- her zaman guncel DSDPID degeri donduruluyor
         case
             when u.id_system = 'legacy' then legacy_map.DSDPID
             when u.id_system = 'current' then cast(u.product_id as int64)
