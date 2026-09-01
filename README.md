@@ -1,4 +1,4 @@
-# Dose of Reality — Is Your Supplement Stack Overdosing You?
+# Dose of Reality — Overlap Deceives, Exceedance Is Real
 
 Data analysis of U.S. dietary supplement use: does taking multiple
 supplements that share the same nutrient push people past the
